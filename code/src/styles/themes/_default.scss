@@ -2,3 +2,21 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
+@use '../abstracts/variables' as *;
+
+html {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #151515;
+}
+
+hr {
+    width: 90%;
+}
+
+p {
+    color: $light-grey;
+}
+
+.space {
+    white-space: pre;
+}

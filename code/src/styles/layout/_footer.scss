@@ -1,3 +1,117 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+@use '../abstracts/variables' as *;
+
+#contact{
+    background-color: $dark-grey;
+    position: relative;
+    .ovalos2 {
+        position: absolute;
+        bottom: 14%;
+    }
+    .contact-text{
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -1.14px;
+        padding: 60px 0 20px 0;
+        margin: 0;
+    }
+    p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0;
+        width: 343px;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+    }
+    .contact-form{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        position: relative;
+        .input{
+            padding: 16px;
+            input,textarea{
+                background: transparent;
+                color: white;
+                border: none;
+                border-bottom: 2px solid #666;
+                padding: 8px 0;
+                width: 100%;
+                resize: none;
+                outline: none;
+                transition: border-color 0.3s ease;
+            }
+
+            
+            input:-webkit-autofill {
+                box-shadow: 0 0 0px 1000px $dark-grey inset !important;
+                -webkit-text-fill-color: white !important;
+                caret-color: white;
+            }
+
+            
+
+            textarea:not(:placeholder-shown) {
+                border-bottom: 2px solid #4EE1A0;
+            }
+            input:valid:not(:placeholder-shown) {
+                border-bottom: 2px solid #4EE1A0;
+            }
+
+            input:invalid:not(:placeholder-shown) {
+                border-bottom: 2px solid #ff3300;
+            }
+
+            input:invalid:not(:placeholder-shown) ~ .error {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .error {
+                float: right;
+                color: #ff3300;
+                font-size: 14px;
+                margin-top: 6px;
+                opacity: 0;
+                transform: translateY(-5px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+        }
+
+        button {
+            width: 50%;
+            margin-bottom: 100px;
+            float: right;
+            border: none;
+        }
+    }
+}
+
+footer {
+    background-color: $dark-grey;
+    text-align: center;
+    h1 {
+        margin: 0;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.33px;
+    }
+    div.icons {
+        padding-bottom: 60px;
+        min-width: 20px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+}

@@ -1,3 +1,73 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+header.header {
+    position: relative;
+    text-align: center;
+    h1 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.33px;
+        margin: 20px 0 20px 0;
+    }
+    div.ovalos {
+        img{
+            position: absolute;
+            left: 0;
+            top: 15%;
+            z-index: -1;
+        }
+    }
+
+    div.circle {
+        img{
+            position: absolute;
+            right: 0;
+            top: 33%;
+        }
+    }
+
+    div.hero-photo {
+        div.icons{
+            margin-bottom: 48px;
+            min-width: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        div.photo {
+            width: 174px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .hero-text {
+        h1 {
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: -1.14px;
+            margin: 0;
+            margin-top: 40px;
+            span {
+                text-decoration: underline;
+                text-underline-offset: 8px;
+                text-decoration-color: $brand-color;
+            }
+        }
+
+        p{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 0;
+            padding: 24px 16px;
+            margin: 0;
+        }
+
+        a{
+            margin-bottom: 80px;
+        }
+    }
+}

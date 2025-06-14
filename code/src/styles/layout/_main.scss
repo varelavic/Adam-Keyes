@@ -1,0 +1,82 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+.curriculum {
+    text-align: center;
+    h1 {
+        margin: 0;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -1px;
+    }
+    h1:first-child {
+        margin-top: 40px;
+    }
+
+    p{
+        margin: 0;
+        margin-bottom: 40px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0;
+    }
+}
+
+
+section.projects {
+    padding:16px;
+    div.header-projects {
+        margin-top: 64px;
+        margin-bottom: 40px;
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            margin: 0;
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: -1.14px;
+        }
+    }
+
+    div.project {
+        div.img{
+        width: 343px;
+        height: 253px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        h1 {
+            margin: 20px 0 7px 0;
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: 0;
+        }
+
+        h2 {
+            margin: 0;
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0;
+            color: $light-grey;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 52px;
+            a {
+                margin-right: 30px;
+            }
+        }
+    }
+}
+
