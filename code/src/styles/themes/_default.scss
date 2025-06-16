@@ -3,14 +3,19 @@
 // default one.
 // -----------------------------------------------------------------------------
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 html {
     font-family: 'Space Grotesk', sans-serif;
     background-color: #151515;
+    scroll-behavior: smooth;
 }
 
 hr {
     width: 90%;
+    @include respond-to('large'){
+        width: 77%;
+    }
 }
 
 p {
@@ -19,4 +24,17 @@ p {
 
 .space {
     white-space: pre;
+}
+
+img.desktop {
+    display: none;
+    @include respond-to('large'){
+        display: block;
+    }
+}
+
+img.phone {
+    @include respond-to('large'){
+        display: none;
+    }
 }

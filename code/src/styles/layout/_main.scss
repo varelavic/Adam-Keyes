@@ -1,17 +1,49 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-
+main {
+    @include respond-to('medium'){
+        padding: 0 32px;
+        hr.none {
+            display: none;
+        }
+    }
+    @include respond-to('large'){
+        padding: 0;
+    }
+}
 .curriculum {
     text-align: center;
+    position: relative;
+    @include respond-to('medium'){
+        display: grid;
+        text-align: start;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3,1fr);
+    }
+    @include respond-to('large'){
+        margin-top: 40px;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 1fr 1fr;
+        padding: 0 165px;
+    }
+
     h1 {
         margin: 0;
         font-size: 32px;
         line-height: 40px;
         letter-spacing: -1px;
+        @include respond-to('medium'){
+            font-size: 48px;
+            line-height: 56px;
+            letter-spacing: -1.5px;
+        }
     }
     h1:first-child {
         margin-top: 40px;
+        @include respond-to('medium'){
+            margin-top: 52px;
+        }
     }
 
     p{
@@ -21,12 +53,39 @@
         font-size: 16px;
         line-height: 26px;
         letter-spacing: 0;
+        @include respond-to('medium'){
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+    .ovalos3 {
+        img.phone {
+            position: absolute;
+            transform: rotate(180deg);
+            bottom: -105px;
+            right: 0;
+            @include respond-to('medium'){
+                bottom: -25px;
+                right: -4.5%;
+            }
+        }
+        img.desktop {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
     }
 }
 
 
 section.projects {
     padding:16px;
+    @include respond-to('medium'){
+        padding: 0;
+    }
+    @include respond-to('large'){
+        padding: 0 165px;
+    }
     div.header-projects {
         margin-top: 64px;
         margin-bottom: 40px;
@@ -34,22 +93,68 @@ section.projects {
         display: inline-flex;
         justify-content: space-between;
         align-items: center;
+        @include respond-to('large'){
+            margin-top: 140px;
+            margin-bottom: 80px;
+        }
         h1{
             margin: 0;
             font-size: 40px;
             line-height: 40px;
             letter-spacing: -1.14px;
+            @include respond-to('medium'){
+                font-size: 72px;
+                line-height: 72px;
+                letter-spacing: -2.05px;
+            }
+            @include respond-to('large'){
+                font-size: 88px;
+                line-height: 88px;
+                letter-spacing: -2.5px;
+            }
         }
     }
 
+    div.total-projects {
+        @include respond-to('medium'){
+            display: grid;
+            gap: 24px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3,1fr);
+        }
+    }
+    div.end {
+        @include respond-to('medium'){
+            justify-self: end;
+        }
+    }
+    .project:has(p:hover) .img{
+        filter: brightness(0.7);
+    }
+    .project:has(p:hover) p{
+        opacity: 1;
+    }
+    .project:has(.img:hover) p{
+        opacity: 1;
+    }
+
     div.project {
+        @include respond-to('large'){
+            position: relative;
+        }
         div.img{
-        width: 343px;
-        height: 253px;
+            max-width: 540px;
+            max-height: 400px;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                @include respond-to('large'){
+                    cursor: pointer;
+                    &:hover{
+                        filter: brightness(0.7);
+                    }
+                }
             }
         }
 
@@ -73,8 +178,21 @@ section.projects {
         p {
             margin: 0;
             margin-bottom: 52px;
+            @include respond-to('large'){
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                position: absolute;
+                top: 27%;
+                left: 37%;
+                opacity: 0;
+            }
             a {
                 margin-right: 30px;
+                @include respond-to('large'){
+                    margin: 0;
+                }
             }
         }
     }

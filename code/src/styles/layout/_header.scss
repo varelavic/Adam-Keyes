@@ -4,56 +4,153 @@
 header.header {
     position: relative;
     text-align: center;
-    h1 {
+    @include respond-to('medium'){
+        text-align: start;
+        padding: 0 32px;
+    }
+    @include respond-to('large'){
+        padding: 0;
+        margin: 0 11.5%;
+    }
+    h1.logo{
         font-weight: 700;
         font-size: 24px;
         line-height: 32px;
         letter-spacing: -0.33px;
         margin: 20px 0 20px 0;
+        @include respond-to('medium'){
+            width: 30%;
+            margin-top: 0;
+            margin-bottom: 90px;
+            padding-top: 30px;
+            font-size: 32px;
+        }
+        @include respond-to('large'){
+            margin-bottom: 127px;
+        }
     }
     div.ovalos {
-        img{
+        img.phone{
             position: absolute;
             left: 0;
-            top: 15%;
+            top: 16%;
             z-index: -1;
+        }
+        img.desktop{
+            position: absolute;
+            left: -15%;
+            top: 16%;
         }
     }
 
     div.circle {
-        img{
+        img.phone{
             position: absolute;
             right: 0;
             top: 33%;
+            @include respond-to('medium'){
+                top: 70%;
+            }
+        }
+        img.desktop {
+            position:absolute;
+            top: 60%;
+            right: 35%;
+            z-index: 1;
         }
     }
 
     div.hero-photo {
+        @include respond-to('medium'){
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $dark-grey;
+        }
         div.icons{
             margin-bottom: 48px;
-            min-width: 20px;
+            min-width: 24px;
+            min-height: 24px;
             display: flex;
             gap: 20px;
             justify-content: center;
+            @include respond-to('medium'){
+                padding-top: 30px;
+                float: right;
+                gap: 32px;
+                margin-right: 32px;
+            }
+            a{
+                width: 24px;
+                height: 24px;
+                svg{
+                fill: white;
+                &:hover{
+                    fill: $brand-color;
+                }
+            }
+            }
         }
         div.photo {
             width: 174px;
+            height: 242px;
             margin-left: auto;
             margin-right: auto;
+            @include respond-to('medium'){
+                width: 322px;
+                height: 486px;
+            }
+            @include respond-to('large'){
+                width: 445px;
+                height: 618px;
+            }
+            img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+            }
         }
     }
 
     .hero-text {
-        h1 {
+        padding: 0 16px;
+        @include respond-to('medium'){
+            padding: 0;
+        }
+        h1.tittle {
             font-size: 40px;
             line-height: 40px;
             letter-spacing: -1.14px;
             margin: 0;
             margin-top: 40px;
+            @include respond-to('medium'){
+                max-width: 75%;
+                font-size: 72px;
+                line-height: 72px;
+                letter-spacing: -2.05px;
+                margin: 0;
+                position: relative;
+                z-index: 1;
+                span.salto{
+                    display: block;
+                }
+            }
+            @include respond-to('large'){
+                max-width: 64%;
+                font-size: 88px;
+                line-height: 88px;
+                letter-spacing: -2.5px;
+                span.salto{
+                    display: none;
+                }
+            }
             span {
                 text-decoration: underline;
                 text-underline-offset: 8px;
                 text-decoration-color: $brand-color;
+                @include respond-to('medium'){
+                    text-underline-offset: 18px;
+                }
             }
         }
 
@@ -64,10 +161,24 @@ header.header {
             letter-spacing: 0;
             padding: 24px 16px;
             margin: 0;
+            @include respond-to('medium'){
+                font-size: 18px;
+                line-height: 28px;
+                padding: 60px 0 34px 0;
+                width: 61%;
+            }
+            @include respond-to('large'){
+                width: 40%;
+                padding: 0;
+                margin: 43px 0 63px 0;
+            }
         }
 
         a{
             margin-bottom: 80px;
+            @include respond-to('large'){
+                margin-bottom: 219px;
+            }
         }
     }
 }
